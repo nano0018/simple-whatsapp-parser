@@ -7,7 +7,7 @@ const numberParser = () => {
   let parsedNumber;
 	if (matches) {
     const modifiedMatch = matches.map(match => match.replace(/[^\d]/g, '')).join('');
-    parsedNumber = "https://wa.me/" + modifiedMatch;
+    parsedNumber = `https://wa.me/${modifiedMatch}/?text=""`;
     waLink.href = parsedNumber;
     waLink.innerText = parsedNumber;
     navigator.clipboard.writeText(parsedNumber);
