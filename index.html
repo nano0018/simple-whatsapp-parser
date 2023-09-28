@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+			rel="stylesheet" />
+		<title>Simple WhatsApp parser</title>
+	</head>
+	<body class="gradient-background">
+		<main class="wrapper">
+			<article>
+				<p class="icon-wrapper">
+					<i class="fa fa-whatsapp" aria-hidden="true"></i>
+				</p>
+				<h1>Simple WhatsApp URL parser</h1>
+				<p>Put the number and press "Generate"</p>
+			</article>
+			<div class="input-wrapper">
+				<input
+					type="text"
+					name="country-call-code"
+					id="country-call-code"
+					value="+57" />
+				<input
+					type="text"
+					name="wa-number"
+					id="wa-number"
+					placeholder="388 222 66 96" 
+                    required
+                    />
+			</div>
+			<button onclick="numberParser()">Generate</button>
+			<div class="input-wrapper">
+                <a href="#" class="wa-link"></a>
+			</div>
+		</main>
+		<script
+			src="https://kit.fontawesome.com/df9a1799f4.js"
+			crossorigin="anonymous"></script>
+		<script src="./js/numberParser.js"></script>
+	</body>
+</html>

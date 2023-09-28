@@ -1,0 +1,123 @@
+:root {
+	--main-bg-color: rgb(137, 197, 122);
+	--dark-color: #075e54;
+    --middle-color: #128c7e;
+    --light-color: #25d366;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-position: center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	font-family: "Roboto", sans-serif;
+}
+
+.gradient-background {
+	background: linear-gradient(85deg, var(--light-color), var(--middle-color), var(--dark-color));
+	background-size: 180% 180%;
+	animation: gradient-animation 6s ease infinite;
+}
+
+@keyframes gradient-animation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+p,
+h1 {
+	text-align: center;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	background-color: aliceblue;
+    opacity: 0.85;
+	justify-content: center;
+	align-items: center;
+	padding: 2.5rem;
+	border-radius: 1rem;
+	box-shadow: 14px 10px 32px 0px var(--dark-color);
+}
+
+.input-wrapper {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 1rem;
+}
+
+.input-wrapper input {
+	font-size: medium;
+	color: var(--dark-color);
+}
+
+
+input[type="text"]:focus {
+	border: 3px solid var(--dark-color);
+}
+
+input[type="text"] {
+	width: 100%;
+	padding: 12px 10px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 3px solid #ccc;
+    border-radius: 0.5rem;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	outline: none;
+}
+
+input#country-call-code {
+	width: 3.75rem;
+	margin-right: 1rem;
+}
+
+input#wa-number {
+	width: fit-content;
+}
+
+a.wa-link {
+    margin-top: 2rem;
+    border: none;
+    background: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+
+.icon-wrapper {
+    font-size: 5rem;
+    margin: 0;
+}
+
+button {
+    background-color: var(--light-color);
+    padding: 15px 10px;
+    width: 100%;
+    font-size: large;
+    color: aliceblue;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+button:hover {
+    background-color: var(--dark-color);
+    transition: 0.5s;
+}
+
+button:active {
+    transition: 0.5s;
+    scale: 110%;
+}
