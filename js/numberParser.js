@@ -2,12 +2,15 @@ const numberParser = () => {
 	let countryCode = document.querySelector("#country-call-code").value;
 	const number = document.querySelector("#wa-number").value;
   const waLink = document.querySelector(".wa-link");
-	const regex = /(?:\+?\d{2,3}(?:[ -]?\d{3}){2,}(?:[ -]?\d{2,})*)|(?:\+\d{2,3} \(\d{3}\) \d{2,})/g;
-	const matches = (countryCode + number).match(regex);
+	const regex = /\d{2,}/g;
+  if (number[0] === '+') {
+    countryCode = "";
+  }
+	const matches = (countryCode + number).match(regex).join('');
   let parsedNumber;
 	if (matches) {
-    const modifiedMatch = matches.map(match => match.replace(/[^\d]/g, '')).join('');
-    parsedNumber = `https://wa.me/${modifiedMatch}/?text=""`;
+    parsedNumber = `https://wa.me/${matches}/?text=`;
+    console.log(matches);
     waLink.href = parsedNumber;
     waLink.innerText = parsedNumber;
     navigator.clipboard.writeText(parsedNumber);
